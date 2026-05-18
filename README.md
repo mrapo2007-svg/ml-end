@@ -30,7 +30,8 @@ ProjectGroup_ID/
 │   ├── T1.ipynb    # Classification Algorithms
 │   ├── T2.ipynb    # Classification Models in Python
 │   ├── T3.ipynb    # Dimensionality Reduction
-│   └── T4.ipynb    # Deep Learning Fundamentals
+│   ├── T4.ipynb    # Deep Learning Fundamentals
+│   └── T5.ipynb    # Convolutional Neural Networks
 │
 ├── data/
 │   └── Gaming_Academic_Performance.csv
@@ -42,4 +43,4 @@ ProjectGroup_ID/
 ├── src/
 │
 ├── README.md
-└── requirements.txt── requirements.txt
+└── requirements.txt

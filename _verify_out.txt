@@ -1,0 +1,32 @@
+cells: 29
+  0  [markdown]: # Task 5 — Convolutional Neural Networks **Course:** Machine Learning & Deep Learning   **Points:** 10/60   **School of 
+  1  [markdown]: ## Step 0 — Imports & Setup
+  2  [code]: import numpy as np import pandas as pd import matplotlib.pyplot as plt import seaborn as sns import warnings warnings.fi
+  3  [markdown]: ## Step 1 — Data Preparation
+  4  [code]: def prepare_cifar10_data():     """Load CIFAR-10 dataset, normalize, and split into train/validation/test."""     # Load
+  5  [markdown]: ## Step 2 — Custom CNN Architecture  ### Architecture ``` Input (32x32x3) → Conv(32, 3x3) → BN → ReLU → MaxPool(2x2)    
+  6  [code]: def build_custom_cnn(input_shape, num_classes):     """Build custom CNN with 3 convolutional blocks."""     model = mode
+  7  [code]: # === Step 0 continued — Setup constants ========================= import os import matplotlib matplotlib.use('Agg')    
+  8  [markdown]: ## Step 3 — Training with Data Augmentation 
+  9  [code]: # Create data-augmentation generator datagen = keras.preprocessing.image.ImageDataGenerator(     rotation_range=15,     
+  10  [markdown]: ## Step 4 — Training History
+  11  [code]: # ─── Training History Plot ────────────────────────────────────────── epochs_range = range(1, len(history_custom.histor
+  12  [markdown]: ## Step 5 — Custom CNN Evaluation & Confusion Matrix
+  13  [code]: # ─── Evaluate Custom CNN ─────────────────────────────────────────── test_loss_c, test_acc_c = model_custom.evaluate(x_
+  14  [markdown]: ## Step 6 — ResNet-50 Transfer Learning — Model Setup
+  15  [code]: # ─── ResNet-50 Transfer Learning (frozen backbone, trainable head) ─── from tensorflow.keras.applications import ResNet
+  16  [markdown]: ## Step 7 — ResNet-50 Training & History
+  17  [code]: # ─── Train ResNet-50 Transfer Model (frozen, 5 epochs) ───────────── print("Training ResNet-50 (frozen backbone, 5 epoc
+  18  [markdown]: ## Step 8 — ResNet-50 Evaluation & Confusion Matrix
+  19  [code]: # ─── Evaluate ResNet-50 on Test Set ───────────────────────────────── test_loss_r, test_acc_r = model_rn.evaluate(x_tes
+  20  [markdown]: ## Step 9 — Learned Filter Visualizations
+  21  [code]: # ─── First-Layer Convolutional Filter Weights ───────────────────── first_conv = model_custom.layers[0]        # Conv2D
+  22  [markdown]: ## Step 10 — Activation Map Visualizations
+  23  [code]: # ─── Activation Maps — Conv Block 1 ───────────────────────────────── sample_img = x_test[0:1]   # shape (1, 32, 32, 3)
+  24  [markdown]: ## Step 11 — Sample Image Predictions
+  25  [code]: # ─── Sample Image Predictions ─────────────────────────────────────── np.random.seed(42) sample_idx = np.random.choice(
+  26  [markdown]: ## Step 12 — Model Comparison
+  27  [code]: # ─── Model Comparison: Custom CNN vs ResNet-50 ───────────────────── models_list = ['Custom CNN', 'ResNet-50\n(Transfer
+  28  [markdown]: ## Step 13 — Discussion  ### Custom CNN Results | Metric               | Value | |---|---| | Test Accuracy        | 0.72
+
+Notebook is valid JSON.
